@@ -1,0 +1,3 @@
+#! /bin/bash
+xiaohua=`curl -G http://www.tuling123.com/openapi/api?key=1a86fcf046587f0aeebf362e08a1aa54\&info=笑话 | jq .|jq '.text'`
+curl -H "Content-type: application/json" -X POST -d '{    "app": "9b217967-b455-f09e-8b3e-14b6a02dffe4","eventId": '`date +%s%N`',"eventType": "trigger","alarmName": "","entityName": "吃饭啦啦啦= V =","entityId": "吃饭啦啦啦= V =","priority": 1,"alarmContent": {"每日一笑": '$xiaohua' }}' "http://api.110monitor.com/alert/api/event"
